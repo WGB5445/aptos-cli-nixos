@@ -5,12 +5,12 @@ pkgs.stdenv.mkDerivation rec{
   pname = "aptos";
   version = "7.3.0";
 
-  src = fetchzip {
+  src = pkgs.fetchzip {
     url = "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v${version}/aptos-cli-${version}-Linux-x86_64.zip";
     sha256 = "sha256-3xuxpGTua1J8mUwG6AIeiCjlfL9bUawBm7nMagnJYHI=";
   };
 
-  nativeBuildInputs = [ autoPatchelfHook pkgs.unzip ];
+  nativeBuildInputs = [ pkgs.autoPatchelfHook pkgs.unzip ];
   buildInputs = [
     pkgs.stdenv.cc.cc.lib
     pkgs.gcc
