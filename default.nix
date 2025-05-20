@@ -27,7 +27,7 @@ pkgs.stdenv.mkDerivation rec{
     cp ${src}/aptos $out/bin/
     chmod +x $out/bin/aptos
   '';
-  meta = with lib; {
+  meta = with pkgs.lib; {
     description = "Command-line interface for interacting with the Aptos blockchain";
     homepage    = "https://github.com/aptos-labs/aptos-core";
     license     = licenses.asl20;
