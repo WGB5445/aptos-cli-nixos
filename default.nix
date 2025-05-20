@@ -1,6 +1,7 @@
-{ stdenv, fetchzip, autoPatchelfHook, pkgs, lib}:
-
-stdenv.mkDerivation rec{
+let
+  pkgs = import <nixpkgs> {};
+in
+pkgs.stdenv.mkDerivation rec{
   pname = "aptos";
   version = "7.3.0";
 
